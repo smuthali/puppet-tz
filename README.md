@@ -27,10 +27,10 @@ The TimeZone puppet module configures TimeZone across Ubuntu/Red Hat/CentOS *nix
 ### What does TimeZone module affect
 
 * TimeZone packages (.deb or rpm)
-* TZ configuration file (ntp.conf)
+* TZ configuration file (/etc/sysconfig/clock)
 
 ## Usage
-In site.pp it is sufficient to simply add `include '::puppet-tz'` to load, install and configure NTP module. Parameters can also be passed to the NTP module by specifying which NTP clock sources to user. For example:
+In site.pp it is sufficient to simply add `include '::puppet-tz'` to load, install and configure TimeZone module. Parameters can also be passed to the TimeZone module by specifying the custom timezone. For example:
 ```puppet
 class { '::puppet-tz':
    timezone => 'America/Los_Angeles',
