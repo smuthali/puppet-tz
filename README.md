@@ -1,4 +1,4 @@
 puppet-tz
 =========
 
-Puppet module to configure timezone on *nix
+Puppet module to modify timezone on *nix systems
