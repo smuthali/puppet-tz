@@ -37,6 +37,15 @@ describe 'puppet-tz' do
 					:mode		=>	'0644',
 					:before		=>	'File[/etc/localtime/${zoneinfo}]',
 					) }
+
+				it { should contain_file('/etc/localtime').with(
+					:ensure 	=>	'link',
+					:target		=>	'/usr/share/zoneinfo/${timezone}',
+					:owner		=>	'root',
+					:group		=>	'root',
+					:mode		=>	'0644',
+					:require 	=>	'File[/etc/sysconfig/clock]',
+					)	}
 			end
 			end
 end

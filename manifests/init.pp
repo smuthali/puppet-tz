@@ -34,9 +34,9 @@ class puppet-tz (
 	        	        before 		=> File['/etc/localtime/${zoneinfo}'];
 	        	}
 	        	file {
-	        	    '/etc/localtime/`${timezone}`':
+	        	    '/etc/localtime':
 	        	        ensure  	=> link,
-	        	        target  	=> '/usr/share/zoneinfo',
+	        	        target  	=> '/usr/share/zoneinfo/${timezone}',
 	        	        owner   	=> 'root',
 	        	        group   	=> 'root',
 	        	        mode    	=> '0644',
